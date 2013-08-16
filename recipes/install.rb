@@ -6,11 +6,13 @@ else
 	''
 end
 
+
 install_args = if node['composer']['install_dir'].nil?
 	''
 else
 	" -- --install-dir=#{node['composer']['install_dir']}"
 end
+
 
 install_command = "curl -s #{node['composer']['url']} | php" + install_args
 
